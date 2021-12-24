@@ -20,9 +20,6 @@ public class ApplicationBasePage {
 	private ConfigReader configReader;
 	Properties prop;
 	
-	
-	
-	
 	@Before(order = 0)
 	public void getProperty()
 	{

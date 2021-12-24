@@ -19,6 +19,11 @@ private By lnk_AdminTool = By.xpath("//a[@href='AdminTools.aspx']");
 	{
 		driver.findElement(lnk_AdminTool).click();
 	}
+	
+	public HelixRequestMeetingPage validateIsWelcomeDisplayed(String welcomeMsg)
+	{
+		return new HelixRequestMeetingPage(driver);
+	}
 
 
 }

@@ -3,6 +3,7 @@ package com.helix.team.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -44,13 +45,13 @@ public class HelixLoginPage extends ElementUtils{
 	
 	public void enterUN(String username) throws InterruptedException
 	{
-		driver.findElement(btn_loin_login).sendKeys(username);
+		driver.findElement(tbx_username_login).sendKeys(username);
 		Thread.sleep(3000);
 	}
 	
 	public void enterPassword(String password) throws InterruptedException
 	{
-		driver.findElement(btn_loin_login).sendKeys(password);
+		driver.findElement(tbx_password_login).sendKeys(password);
 		Thread.sleep(3000);
 	}
 	
@@ -59,11 +60,15 @@ public class HelixLoginPage extends ElementUtils{
 		driver.findElement(btn_loin_login).click();
 	}
 	
+	
+	
 	public HelixMeetingListPage doLogin(String username, String password) throws InterruptedException
 	{
 		driver.findElement(tbx_username_login).sendKeys(username);
 		Thread.sleep(3000);
-		driver.findElement(tbx_password_login).sendKeys(password);
+		Actions act = new Actions(driver);
+		act.click(driver.findElement(tbx_password_login));
+		act.sendKeys(password).build().perform();
 		Thread.sleep(3000);
 		driver.findElement(btn_loin_login).click();
 		return new HelixMeetingListPage(driver);

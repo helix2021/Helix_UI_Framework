@@ -2,7 +2,7 @@ Feature: Admin Tools Page Validations
 
 
 Background: 
-Given User is on Admin Tools Page
+Given User is on Meeting request Tools Page
 |username			  |password     |
 |mcorry@mailinator.com|Test123Test!!|
 

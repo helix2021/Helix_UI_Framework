@@ -1,17 +1,19 @@
 package runner;
 
 import org.junit.runner.RunWith;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src\\test\\resources\\features", 
-				 glue = {"stepDefinitions","ApplicationBasePage"},
+@CucumberOptions(features="D://Helix_Workspaces//Helix_UI_Framework//src//test//resources//features//AdminTools.feature", 
+				 glue = {"stepDefinitions","ApplicationBasePage"})
 
-				tags = "@AdminTools")
-@Test
-public class TestRunner {
+public class TestRunner{
+	
+	
 
 }
